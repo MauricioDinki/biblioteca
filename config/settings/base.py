@@ -40,6 +40,7 @@ DJANGO_APPS = (
 
 THIRD_PARTY_APPS = (
     'suit',
+    'private_media',
 )
 
 # Apps specific for this project go here.
@@ -86,7 +87,7 @@ ADMINS = (
 # -----------------------------------------------------------------------------
 TIME_ZONE = 'America/Mexico_City'
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-es'
 
 SITE_ID = 1
 
@@ -139,5 +140,5 @@ AUTHENTICATION_BACKENDS = (
 # SUIT CONFIGURATION
 # -----------------------------------------------------------------------------
 SUIT_CONFIG = {
-    'ADMIN_NAME': 'biblioteca',
+    'ADMIN_NAME': 'Biblioteca',
 }
