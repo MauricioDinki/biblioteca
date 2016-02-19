@@ -4,11 +4,13 @@
 from django.shortcuts import render
 from django.views.generic import View
 
-from .models import Archivo
+from biblioteca.apps.core.mixins import LoginRequiredMixin
 from biblioteca.apps.categorias.models import Categoria
 
+from .models import Archivo
 
-class ListaArchivos(View):
+
+class ListaArchivos(LoginRequiredMixin, View):
     template_name = 'archivos/lista_archivos.html'
 
     def get(self, request):
