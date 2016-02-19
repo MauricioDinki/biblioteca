@@ -5,12 +5,14 @@ from django.db import models
 
 from biblioteca.apps.categorias.models import Categoria
 
+from private_media.storages import PrivateMediaStorage
+
 
 class Archivo(models.Model):
     archivo = models.FileField(
         blank=False,
         null=False,
-        upload_to='archivos'
+        storage=PrivateMediaStorage(),
     )
 
     categoria = models.ForeignKey(
