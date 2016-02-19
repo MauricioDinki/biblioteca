@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  <title>Emma - Biblioteca</title>
+{% endblock %}
+
+{% block content %}
+  <h1>Lista de Archivos</h1>
+  {% for categoria in categorias %}
+    <ul>
+      <li> {{ categoria.categoria }} </li>
+      <li>
+        <ul>
+          {% for archivo in archivos %}
+              {% if archivo.categoria == categoria %}
+                <a href="{{ archivo.archivo.url }}">{{ archivo.nombre }}</a>
+              {% endif %}
+          {% endfor %}
+        </ul>
+      </li>
+    </ul>
+  {% endfor %}
+
+{% endblock %}
