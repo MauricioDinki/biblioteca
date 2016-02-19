@@ -10,10 +10,12 @@ from django.contrib import admin
 from django.views import defaults as error_views
 
 from biblioteca.apps.archivos import urls as archivos_urls
+from biblioteca.apps.usuarios import urls as usuarios_urls
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'', include(archivos_urls, namespace='archivos')),
+    url(r'', include(usuarios_urls, namespace='usuarios')),
 ]
 
 if settings.DEBUG:
