@@ -18,7 +18,8 @@ class LoginForm(forms.Form):
         )],
         widget=forms.TextInput(
             attrs={
-                'class': '',
+                'class': 'form-input center-block',
+                'placeholder': 'Username',
             }
         ),
     )
@@ -27,7 +28,8 @@ class LoginForm(forms.Form):
         validators=[validators.eval_blank],
         widget=forms.PasswordInput(
             attrs={
-                'class': '',
+                'class': 'form-input center-block',
+                'placeholder': 'Password',
             }
         ),
     )
