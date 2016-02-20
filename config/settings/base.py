@@ -79,9 +79,9 @@ FIXTURE_DIRS = (
 
 # MANAGER CONFIGURATION
 # -----------------------------------------------------------------------------
-ADMINS = (
-    ("""Mauricio Ivan Mejia Ramirez""", 'mauriciodinki@gmail.com'),
-)
+# ADMINS = (
+#    ("""Mauricio Ivan Mejia Ramirez""", 'mauriciodinki@gmail.com'),
+# )
 
 # GENERAL CONFIGURATION
 # -----------------------------------------------------------------------------
