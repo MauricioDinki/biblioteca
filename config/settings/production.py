@@ -5,6 +5,7 @@ Production settings
 - Run in production mode
 - Use Amazon's S3 for storing static files
 """
+from .base import *  # noqa
 
 # DEBUG
 # -----------------------------------------------------------------------------
@@ -17,22 +18,19 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # SITE CONFIGURATION
 # -----------------------------------------------------------------------------
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = [".miemma.com"]
 
 # DATABASE
 # -----------------------------------------------------------------------------
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'STORAGE_ENGINE': 'MyISAM / INNODB / ETC',
-        'NAME': 'biblioteca',
-        'USER': 'root',
-        'PASSWORD': 'biblioteca',
-        'HOST': '',
-        'OPTIONS': {
-            'read_default_file': '/path/to/my.cnf',
-            "init_command": "SET foreign_key_checks = 0;",
-        },
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': env('DB_NAME'),
+        'USER': env('DB_USER'),
+        'PASSWORD': env('DB_PASSWORD'),
+        'HOST': env('DB_HOST'),
+        'PORT': env('DB_PORT'),
     }
 }
 
@@ -46,28 +44,30 @@ INSTALLED_APPS += (
 # -----------------------------------------------------------------------------
 
 # Amazon s3 configuration
-AWS_STORAGE_BUCKET_NAME = env("AWS_STORAGE_BUCKET_NAME")
-AWS_ACCESS_KEY_ID = env("AWS_ACCESS_KEY_ID")
-AWS_SECRET_ACCESS_KEY = env("AWS_SECRET_ACCESS_KEY")
-AWS_AUTO_CREATE_BUCKET = True
-AWS_QUERYSTRING_AUTH = False
-AWS_S3_CALLING_FORMAT = OrdinaryCallingFormat()
-
-AWS_EXPIRY = 60 * 60 * 24 * 7
-
-AWS_HEADERS = {
-    'Cache-Control': six.b('max-age=%d, s-maxage=%d, must-revalidate' % (
-        AWS_EXPIRY, AWS_EXPIRY))
-}
+# AWS_STORAGE_BUCKET_NAME = env("AWS_STORAGE_BUCKET_NAME")
+# AWS_ACCESS_KEY_ID = env("AWS_ACCESS_KEY_ID")
+# AWS_SECRET_ACCESS_KEY = env("AWS_SECRET_ACCESS_KEY")
 
 # static
 
-MEDIA_URL = "https://%s/" % env("AWS_BUCKET_URL", None)
+# STATIC_URL = "https://%s/" % env("AWS_BUCKET_URL", None)
 
-STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+# STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+
+STATIC_ROOT = str(ROOT_DIR('staticfiles'))
+
+STATIC_URL = '/static/'
 
 # MEDIA CONFIGURATION
 # -----------------------------------------------------------------------------
-MEDIA_ROOT = str(PROJECT_DIR('media'))
+PRIVATE_MEDIA_ROOT = str(PROJECT_DIR('media/private'))
 
-MEDIA_URL = '/media/'
+PRIVATE_MEDIA_URL = 'media/private/'
+
+PRIVATE_MEDIA_SERVER = 'private_media.servers.DefaultServer'
+
+PRIVATE_MEDIA_PERMISSIONS = 'biblioteca.apps.core.permissions.LoginPermission'
+
+MEDIA_ROOT = str(PROJECT_DIR('media/public'))
+
+MEDIA_URL = 'media/public/'
