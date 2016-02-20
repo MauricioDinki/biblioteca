@@ -78,6 +78,15 @@ STATICFILES_FINDERS = (
 
 # MEDIA CONFIGURATION
 # -----------------------------------------------------------------------------
-MEDIA_ROOT = str(PROJECT_DIR('media'))
+PRIVATE_MEDIA_ROOT = str(PROJECT_DIR('media/private'))
 
-MEDIA_URL = '/media/'
+PRIVATE_MEDIA_URL = 'media/private/'
+
+PRIVATE_MEDIA_SERVER = 'private_media.servers.DefaultServer'
+
+PRIVATE_MEDIA_PERMISSIONS = 'biblioteca.apps.core.permissions.LoginPermission'
+
+MEDIA_ROOT = str(PROJECT_DIR('media/public'))
+
+MEDIA_URL = 'media/public/'
+

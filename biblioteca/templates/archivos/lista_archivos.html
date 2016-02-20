@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  <title>Emma | Biblioteca</title>
+{% endblock %}
+
+{% block content %}
+
+  <div class="page_header text-center">
+    <h1> Biblioteca </h1>
+  </div>
+
+  <div class="files_container">
+    {% for categoria in categorias %}
+      <div class="section_container">
+        <div class="well">
+          <legend>{{ categoria.categoria }}</legend>
+          <ul class="list-group">
+            {% for archivo in archivos %}
+              {% if archivo.categoria == categoria %}
+                <li class="list-group-item">
+                  <a href="{{ archivo.archivo.url }}"
+                     target="_blank">
+                    {{ archivo.nombre }}
+                  </a>
+                </li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+{% endblock %}

@@ -27,7 +27,7 @@ DJANGO_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
-    'django.contrib.sites',
+    # 'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
@@ -40,10 +40,15 @@ DJANGO_APPS = (
 
 THIRD_PARTY_APPS = (
     'suit',
+    'private_media',
 )
 
 # Apps specific for this project go here.
-LOCAL_APPS = ()
+LOCAL_APPS = (
+    'biblioteca.apps.archivos',
+    'biblioteca.apps.categorias',
+    'biblioteca.apps.usuarios',
+)
 
 INSTALLED_APPS = THIRD_PARTY_APPS + DJANGO_APPS + LOCAL_APPS
 
@@ -82,7 +87,7 @@ ADMINS = (
 # -----------------------------------------------------------------------------
 TIME_ZONE = 'America/Mexico_City'
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-es'
 
 SITE_ID = 1
 
@@ -107,13 +112,13 @@ TEMPLATES = [
                 'django.template.loaders.app_directories.Loader',
             ],
             'context_processors': [
-                'django.core.context_processors.debug',
-                'django.core.context_processors.request',
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
-                'django.core.context_processors.i18n',
-                'django.core.context_processors.media',
-                'django.core.context_processors.static',
-                'django.core.context_processors.tz',
+                'django.template.context_processors.i18n',
+                'django.template.context_processors.media',
+                'django.template.context_processors.static',
+                'django.template.context_processors.tz',
                 'django.contrib.messages.context_processors.messages',
             ],
         },
@@ -135,5 +140,5 @@ AUTHENTICATION_BACKENDS = (
 # SUIT CONFIGURATION
 # -----------------------------------------------------------------------------
 SUIT_CONFIG = {
-    'ADMIN_NAME': 'biblioteca',
+    'ADMIN_NAME': 'Biblioteca',
 }

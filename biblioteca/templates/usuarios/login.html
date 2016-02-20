@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  <title>Emma - Biblioteca</title>
+{% endblock %}
+
+{% block content %}
+
+  <div class="page_header text-center">
+    <h3> Login </h3>
+  </div>
+
+  <form action="." method="post">
+    {% csrf_token %}
+
+    {{ form.username }}
+
+    {% if form.username.errors %}
+      <div class="alert alert-danger custom-alert center-block" role="alert">
+      {{ form.username.errors.as_text|cut:"*" }}
+      </div>
+		{% endif %}
+
+    {{ form.password }}
+
+    {% if form.password.errors %}
+      <div class="alert alert-danger custom-alert center-block" role="alert">
+        {{ form.password.errors.as_text|cut:"* "}}
+      </div>
+    {% endif %}
+
+    {% if form.non_field_errors %}
+      <div class="alert alert-danger custom-alert center-block" role="alert">
+        {{ form.non_field_errors.as_text|cut:"*" }}
+      </div>
+    {% endif %}
+
+    <button class="btn btn-emma form-button center-block">Entrar</button>
+  </form>
+
+{% endblock %}
