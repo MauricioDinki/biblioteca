@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+## Bsasic build dependencies of various Django apps
+build-essential
+
+# Required to translate
+gettext
+python-dev
+python-pip
+
+## Shared dependencies of:
+## Pillow, pylibmc
+zlib1g-dev
+
+## Postgresql and psycopg2 dependencies
+libpq-dev
+
+## Pillow dependencies
+libtiff4-dev
+libjpeg8-dev
+libfreetype6-dev
+liblcms1-dev
+libwebp-dev
+
+## Pylibmc
+libmemcached-dev
+libssl-dev
+
+## Server
+nginx
+ufw
+postgresql
+postgresql-contrib
