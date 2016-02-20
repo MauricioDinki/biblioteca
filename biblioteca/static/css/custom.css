@@ -1,0 +1,38 @@
+.page_header {
+    padding-bottom: 0.4em;
+    margin: 2em 0 0.5em 0;
+    border-bottom: 1px solid gray;
+}
+
+.files_container {
+    text-align: center;
+}
+
+.section_container{
+    display: inline-block;
+    margin:  2em;
+    width: 25%;
+}
+
+.btn-emma {
+    border-color: #F0B800;
+    background-color: #F0C32A;
+    color: white;
+    outline:0 !important;
+}
+
+.btn-emma:hover {
+    border-color: #F0B800;
+    background-color: #F0BC0E;
+    color: white;
+}
+
+.btn-emma:active {
+    border-color: #F0A400;
+    background-color: #F0BC0E;
+    color: white;
+}
+
+.btn-emma:focus {
+    color: white;
+}

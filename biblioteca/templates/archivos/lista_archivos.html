@@ -1,11 +1,66 @@
 {% extends 'base.html' %}
 
 {% block title %}
-  <title>Emma - Biblioteca</title>
+  <title>Emma | Biblioteca</title>
 {% endblock %}
 
 {% block content %}
-  <h1>Lista de Archivos</h1>
+
+  <div class="page_header text-center">
+    <h1> Biblioteca </h1>
+  </div>
+
+  <div class="files_container">
+    <div class="section_container">
+      <div class="well">
+        <legend>Categoria 1</legend>
+        <ul class="list-group">
+          <li class="list-group-item"> Item 1</li>
+          <li class="list-group-item"> Item 1</li>
+          <li class="list-group-item"> Item 1</li>
+          <li class="list-group-item"> Item 1</li>
+          <li class="list-group-item"> Item 1</li>
+          <li class="list-group-item"> Item 1</li>
+          <li class="list-group-item"> Item 1</li>
+          <li class="list-group-item"> Item 1</li>
+          <li class="list-group-item"> Item 1</li>
+        </ul>
+      </div>
+    </div>
+    <div class="section_container">
+      <div class="well">
+        <legend>Categoria 1</legend>
+        <ul class="list-group">
+          <li class="list-group-item"> Item 1</li>
+          <li class="list-group-item"> Item 1</li>
+          <li class="list-group-item"> Item 1</li>
+          <li class="list-group-item"> Item 1</li>
+          <li class="list-group-item"> Item 1</li>
+          <li class="list-group-item"> Item 1</li>
+          <li class="list-group-item"> Item 1</li>
+          <li class="list-group-item"> Item 1</li>
+          <li class="list-group-item"> Item 1</li>
+        </ul>
+      </div>
+    </div>
+    <div class="section_container">
+      <div class="well">
+        <legend>Categoria 1</legend>
+        <ul class="list-group">
+          <li class="list-group-item"> Item 1</li>
+          <li class="list-group-item"> Item 1</li>
+          <li class="list-group-item"> Item 1</li>
+          <li class="list-group-item"> Item 1</li>
+          <li class="list-group-item"> Item 1</li>
+          <li class="list-group-item"> Item 1</li>
+          <li class="list-group-item"> Item 1</li>
+          <li class="list-group-item"> Item 1</li>
+          <li class="list-group-item"> Item 1</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
   {% for categoria in categorias %}
     <ul>
       <li> {{ categoria.categoria }} </li>
@@ -19,6 +74,5 @@
         </ul>
       </li>
     </ul>
-  {% endfor %}
-
+  {% endfor %}-->
 {% endblock %}
