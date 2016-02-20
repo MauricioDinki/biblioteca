@@ -142,3 +142,14 @@ AUTHENTICATION_BACKENDS = (
 SUIT_CONFIG = {
     'ADMIN_NAME': 'Biblioteca',
 }
+
+# General Static Configuration
+# ----------------------------------------------------------------------------
+STATICFILES_DIRS = (
+    str(PROJECT_DIR.path('static')),
+)
+
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+)
