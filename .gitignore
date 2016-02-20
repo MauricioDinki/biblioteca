@@ -66,5 +66,5 @@ biblioteca/media
 
 .idea/
 biblioteca/media/
-biblioteca/staticfiles/
+staticfiles/
 db.sqlite3
