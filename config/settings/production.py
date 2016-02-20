@@ -3,8 +3,8 @@
 """
 Production settings
 - Run in production mode
-- Use Amazon's S3 for storing static files
 """
+
 from .base import *  # noqa
 
 # DEBUG
@@ -56,7 +56,7 @@ INSTALLED_APPS += (
 
 # STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 
-STATIC_ROOT = str(PROJECT_DIR('staticfiles'))
+STATIC_ROOT = str(ROOT_DIR('staticfiles'))
 
 STATIC_URL = '/static/'
 

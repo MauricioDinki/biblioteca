@@ -65,15 +65,6 @@ TEST_RUNNER = 'django.test.runner.DiscoverRunner'
 # -----------------------------------------------------------------------------
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = (
-    str(PROJECT_DIR.path('static')),
-)
-
-STATICFILES_FINDERS = (
-    'django.contrib.staticfiles.finders.FileSystemFinder',
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-)
-
 # MEDIA CONFIGURATION
 # -----------------------------------------------------------------------------
 PRIVATE_MEDIA_ROOT = str(PROJECT_DIR('media/private'))
