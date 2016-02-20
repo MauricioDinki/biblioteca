@@ -63,8 +63,6 @@ TEST_RUNNER = 'django.test.runner.DiscoverRunner'
 
 # STATIC FILE CONFIGURATION
 # -----------------------------------------------------------------------------
-STATIC_ROOT = str(PROJECT_DIR('staticfiles'))
-
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
