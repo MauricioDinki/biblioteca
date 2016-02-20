@@ -11,68 +11,25 @@
   </div>
 
   <div class="files_container">
-    <div class="section_container">
-      <div class="well">
-        <legend>Categoria 1</legend>
-        <ul class="list-group">
-          <li class="list-group-item"> Item 1</li>
-          <li class="list-group-item"> Item 1</li>
-          <li class="list-group-item"> Item 1</li>
-          <li class="list-group-item"> Item 1</li>
-          <li class="list-group-item"> Item 1</li>
-          <li class="list-group-item"> Item 1</li>
-          <li class="list-group-item"> Item 1</li>
-          <li class="list-group-item"> Item 1</li>
-          <li class="list-group-item"> Item 1</li>
-        </ul>
+    {% for categoria in categorias %}
+      <div class="section_container">
+        <div class="well">
+          <legend>{{ categoria.categoria }}</legend>
+          <ul class="list-group">
+            {% for archivo in archivos %}
+              {% if archivo.categoria == categoria %}
+                <li class="list-group-item">
+                  <a href="{{ archivo.archivo.url }}"
+                     target="_blank">
+                    {{ archivo.nombre }}
+                  </a>
+                </li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        </div>
       </div>
-    </div>
-    <div class="section_container">
-      <div class="well">
-        <legend>Categoria 1</legend>
-        <ul class="list-group">
-          <li class="list-group-item"> Item 1</li>
-          <li class="list-group-item"> Item 1</li>
-          <li class="list-group-item"> Item 1</li>
-          <li class="list-group-item"> Item 1</li>
-          <li class="list-group-item"> Item 1</li>
-          <li class="list-group-item"> Item 1</li>
-          <li class="list-group-item"> Item 1</li>
-          <li class="list-group-item"> Item 1</li>
-          <li class="list-group-item"> Item 1</li>
-        </ul>
-      </div>
-    </div>
-    <div class="section_container">
-      <div class="well">
-        <legend>Categoria 1</legend>
-        <ul class="list-group">
-          <li class="list-group-item"> Item 1</li>
-          <li class="list-group-item"> Item 1</li>
-          <li class="list-group-item"> Item 1</li>
-          <li class="list-group-item"> Item 1</li>
-          <li class="list-group-item"> Item 1</li>
-          <li class="list-group-item"> Item 1</li>
-          <li class="list-group-item"> Item 1</li>
-          <li class="list-group-item"> Item 1</li>
-          <li class="list-group-item"> Item 1</li>
-        </ul>
-      </div>
-    </div>
+    {% endfor %}
   </div>
 
-  {% for categoria in categorias %}
-    <ul>
-      <li> {{ categoria.categoria }} </li>
-      <li>
-        <ul>
-          {% for archivo in archivos %}
-              {% if archivo.categoria == categoria %}
-                <a href="{{ archivo.archivo.url }}">{{ archivo.nombre }}</a>
-              {% endif %}
-          {% endfor %}
-        </ul>
-      </li>
-    </ul>
-  {% endfor %}-->
 {% endblock %}
