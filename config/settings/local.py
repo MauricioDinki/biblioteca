@@ -8,7 +8,7 @@ Local settings
 - Add django-extensions as app
 """
 
-from .base import *  # noqa
+from .base import *
 
 import os
 

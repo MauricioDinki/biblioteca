@@ -1,23 +1,62 @@
-{% load  static from staticfiles%}
+{% load static from staticfiles%}
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es_ES">
   <head>
-    {% block title %}
-    {% endblock %}
-    <meta charset="utf-8">
+    <title>Emma: Acompañamiento con propósito</title>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport"
-          content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <link rel="stylesheet" href="{% static "css/bootstrap.css" %}">
-    <link rel="stylesheet" href="{% static "css/custom.css" %}">
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0,
+                   user-scalable=no" />
+    <meta name="description"
+          content="Emma es un servicio de acompañamiento a adultos de la
+          tercera edad. Premio Nacional del Estudiante Emprendedor de
+          Entrepreneurs Organization (EO)"/>
+    <meta name="keywords"
+          content="emma, fernanda sottil, permio nacional el estudiante
+          emprendedor, acompañantes de la tercera edad, emma acompañantes de
+          la tercera edad, fernanda sottil ganadora del premio estudiante
+          emprendedor, Para que tu ser querido no pierda sus pasatiempos
+          favoritos, acompañamiento, tercera, edad, tercera edad, miemma, mi
+          emma, mi emma fernanda sottil"/>
+
+    <meta property="og:site_name" content="Emma">
+    <meta property="og:locale" content="en_MX"/>
+    <meta property="og:locale:alternate" content="es_US"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content="http://miemma.com/">
+    <meta property="og:title"
+          content="Emma: Acompañamiento con propósito"/>
+    <meta property="og:description"
+          content="Emma es un servicio de acompañamiento a adultos de la
+          tercera edad. Premio Nacional del Estudiante Emprendedor de
+          Entrepreneurs Organization (EO)"/>
+    <meta name="format-detection" content="telephone=no">
+
+    <link href="{% static "lib/bootstrap/css/bootstrap.min.css" %}"
+          rel="stylesheet"/>
+    <link href="{% static "lib/font-awesome/css/font-awesome.min.css" %}"
+          rel="stylesheet"/>
+    <link href="{% static "css/main.css" %}" rel="stylesheet" type="text/css"
+          media="screen"/>
     <link rel="shortcut icon" type="image/x-icon"
-          href="{% static "img/favicon.png" %}">
+          href="{% static "img/favicon.png" %}"/>
   </head>
   <body>
-    <div class="container">
-      {% block content %}
-      {% endblock %}
+    <div class="container-overflow">
+    {% include "base/contact.html" %}
+    {% include "base/header.html" %}
+
+    {% block content %}
+    {% endblock content %}
+
+    {% include "base/footer.html" %}
+
+    <script src="{% static 'lib/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'lib/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/efects.js' %}"></script>
+    {% block js %}
+    {% endblock %}
     </div>
-    <script src="{% static "js/jquery-2.2.0.min.js" %}"></script>
-    <script src="{% static "js/bootstrap.min.js" %}"></script>
   </body>
 </html>

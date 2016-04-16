@@ -1,0 +1,106 @@
+/* ESTILOS NORMALES
+   ========================================================================= */
+
+.page_header {
+    padding-bottom: 0.4em;
+    margin: 120px 0 2em 0;
+    font-family: 'Avenir LT Std Heavy'
+    color $dark_gray
+}
+
+
+.emma-well
+  background-color $yellow
+
+  legend
+    color $dark_gray
+    font-family 'Avenir LT Std Roman'
+    border none
+
+.files_container {
+    text-align: center;
+}
+
+.section_container{
+    display: inline-block;
+    margin:  2em;
+    width: 25%;
+    vertical-align: top;
+}
+
+.btn-emma {
+    border-color: #F0B800;
+    background-color: #F0C32A;
+    color: white;
+    outline:0 !important;
+}
+
+.btn-emma:hover {
+    border-color: #F0B800;
+    background-color: #F0BC0E;
+    color: white;
+}
+
+.btn-emma:active {
+    border-color: #F0A400;
+    background-color: #F0BC0E;
+    color: white;
+}
+
+.btn-emma:focus {
+    color: white;
+}
+
+.form-input, .custom-alert {
+    width: 80%;
+    margin-top: 2em;
+}
+
+.form-button {
+    width: 80%;
+    margin-top: 4em;
+}
+
+/* RESPONSIVE
+   ========================================================================= */
+
+/* Tablets en horizonal y escritorios normales
+   ------------------------------------------------------------------------- */
+@media (min-width: 768px) and (max-width: 1199px) {
+    .section_container{
+        display: inline-block;
+        margin:  1.5em;
+        width: 40%;
+    }
+}
+
+/* Móviles en horizontal o tablets en vertical
+   ------------------------------------------------------------------------- */
+@media (max-width: 767px) {
+    .section_container{
+        display: inline-block;
+        margin:  1em;
+        width: 40%;
+    }
+}
+
+/* Móviles en vertical
+   ------------------------------------------------------------------------- */
+@media (max-width: 480px) {
+
+    .section_container{
+        display: inline-block;
+        margin:  1em 0.3em;
+        width: 85%;
+    }
+}
+
+
+.list-group-item
+  background-color $light_gray !important
+
+  a
+    color $dark_gray
+    &:hover
+    &:focus
+      color $dark_gray

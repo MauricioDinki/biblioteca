@@ -65,6 +65,6 @@ target/
 biblioteca/media
 
 .idea/
-biblioteca/media/
 staticfiles/
 db.sqlite3
+biblioteca/static/node_modules

@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+
 """
 Django settings for biblioteca
 For more information on this file, see
@@ -14,7 +15,7 @@ import environ
 
 # DIRS
 # -----------------------------------------------------------------------------
-ROOT_DIR = environ.Path(__file__) - 3  # (/a/b/myfile.py - 3 = /)
+ROOT_DIR = environ.Path(__file__) - 3
 PROJECT_DIR = ROOT_DIR.path('biblioteca')
 APPS_DIR = ROOT_DIR.path('biblioteca/apps')
 

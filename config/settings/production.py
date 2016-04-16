@@ -45,19 +45,6 @@ INSTALLED_APPS += (
 # STATIC CONFIGURATION
 # -----------------------------------------------------------------------------
 
-# Amazon s3 configuration
-# AWS_STORAGE_BUCKET_NAME = env("AWS_STORAGE_BUCKET_NAME")
-# AWS_ACCESS_KEY_ID = env("AWS_ACCESS_KEY_ID")
-# AWS_SECRET_ACCESS_KEY = env("AWS_SECRET_ACCESS_KEY")
-
-# static
-
-# STATIC_URL = "https://%s/" % env("AWS_BUCKET_URL", None)
-
-# STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
-
-STATIC_ROOT = str(ROOT_DIR('staticfiles'))
-
 STATIC_URL = '/static/'
 
 # MEDIA CONFIGURATION

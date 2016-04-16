@@ -1,41 +1,45 @@
-{% extends 'base.html' %}
-
-{% block title %}
-  <title>Emma - Biblioteca</title>
-{% endblock %}
+{% extends "base.html" %}
 
 {% block content %}
-
-  <div class="page_header text-center">
-    <h3> Login </h3>
-  </div>
-
-  <form action="." method="post">
-    {% csrf_token %}
-
-    {{ form.username }}
-
-    {% if form.username.errors %}
-      <div class="alert alert-danger custom-alert center-block" role="alert">
-      {{ form.username.errors.as_text|cut:"*" }}
+  <section class="login">
+    <h1 class="login-title">
+      Inicio de sesión
+    </h1>
+    <div class="row text-center">
+      <div class="col-md-6">
+        {% if form.non_field_errors %}
+          <div class="alert alert-danger login-alert" role="alert">
+            {{ form.non_field_errors.as_text|cut:"*" }}
+          </div>
+        {% endif %}
       </div>
-		{% endif %}
+    </div>
+    <div class="row text-center">
+      <div class="col-md-6">
+        <form class="login-form" method="post" action=".">
+          {% csrf_token %}
+          {{ form.username }}
 
-    {{ form.password }}
-
-    {% if form.password.errors %}
-      <div class="alert alert-danger custom-alert center-block" role="alert">
-        {{ form.password.errors.as_text|cut:"* "}}
+		        {% if form.username.errors %}
+	            <div class="alert alert-danger login-alert" role="alert">
+	              {{ form.username.errors.as_text|cut:"*" }}
+	            </div>
+	          {% endif %}
+          {{ form.password }}
+		        {% if form.password.errors %}
+	            <div class="alert alert-danger login-alert" role="alert">
+	              {{ form.password.errors.as_text|cut:"* "}}
+	            </div>
+	          {% endif %}
+          <div class="row text-center">
+            <div class="col-xs-10 col-sm-8 col-md-5 col-lg-5">
+              <button class="emma-btn emma-btn-dark login-btn">
+                Iniciar sesión
+              </button>
+            </div>
+          </div>
+        </form>
       </div>
-    {% endif %}
-
-    {% if form.non_field_errors %}
-      <div class="alert alert-danger custom-alert center-block" role="alert">
-        {{ form.non_field_errors.as_text|cut:"*" }}
-      </div>
-    {% endif %}
-
-    <button class="btn btn-emma form-button center-block">Entrar</button>
-  </form>
-
-{% endblock %}
+    </div>
+  </section>
+{% endblock content %}
