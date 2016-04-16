@@ -44,9 +44,8 @@ INSTALLED_APPS += (
 
 # STATIC CONFIGURATION
 # -----------------------------------------------------------------------------
-
+STATIC_ROOT = str(PROJECT_DIR('staticfiles'))
 STATIC_URL = '/static/'
-
 # MEDIA CONFIGURATION
 # -----------------------------------------------------------------------------
 PRIVATE_MEDIA_ROOT = str(PROJECT_DIR('media/private'))
