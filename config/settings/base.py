@@ -49,6 +49,7 @@ LOCAL_APPS = (
     'biblioteca.apps.archivos',
     'biblioteca.apps.categorias',
     'biblioteca.apps.usuarios',
+    'biblioteca.apps.permisos',
 )
 
 INSTALLED_APPS = THIRD_PARTY_APPS + DJANGO_APPS + LOCAL_APPS
