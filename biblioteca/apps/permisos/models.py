@@ -5,7 +5,7 @@ from django.db import models
 
 
 class Permiso(models.Model):
-    user = models.ForeignKey(
+    user = models.OneToOneField(
         User
     )
     embajador = models.BooleanField(
@@ -20,4 +20,4 @@ class Permiso(models.Model):
         verbose_name_plural = 'Permisos'
 
     def __unicode__(self):
-        return self.user
+        return unicode(self.user)
