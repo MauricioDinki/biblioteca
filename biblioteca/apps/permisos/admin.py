@@ -8,4 +8,4 @@ from .models import Permiso
 
 @admin.register(Permiso)
 class PermisoAdmin(admin.ModelAdmin):
-    list_display = ('user', 'embajador', 'intern')
+    list_display = ('user', 'embajador', 'intern', 'emma')
