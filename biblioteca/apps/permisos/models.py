@@ -12,7 +12,10 @@ class Permiso(models.Model):
         default=False,
     )
     intern = models.BooleanField(
-        default=False
+        default=False,
+    )
+    emma = models.BooleanField(
+        default=True,
     )
 
     class Meta:
