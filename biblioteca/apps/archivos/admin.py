@@ -3,9 +3,13 @@
 
 from django.contrib import admin
 
-from .models import Archivo
+from .models import Archivo, Link
 
 
 @admin.register(Archivo)
 class ArchivoAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('nombre', 'categoria')
+
+@admin.register(Link)
+class LinkAdmin(admin.ModelAdmin):
+    list_display = ('titulo', 'categoria')
