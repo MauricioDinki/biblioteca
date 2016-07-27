@@ -8,54 +8,107 @@
 
   <div class="files_container">
     {% if request.user.permiso.embajador %}
-      <div class="section_container">
-	      <div class="well emma-purple-well">
-	        <legend>Generar Activación</legend>
-	        <ul class="list-group">
-		        <li class="list-group-item">
-		          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdxmEcX_BvF-hTRnS2V1jJ1cqQSzimwTGfQXnHYgGMWDVwZNA/viewform"
-		             target="_blank">
-		            Activa una alianza
-		          </a>
-		        </li>
-	        </ul>
+      {% for categoria in categorias_embajador %}
+	      <div class="section_container">
+	        <div class="well emma-purple-well">
+	          <legend>{{ categoria.categoria }}</legend>
+	          <ul class="list-group">
+	            {% for archivo in archivos %}
+	              {% if archivo.categoria == categoria %}
+	                <li class="list-group-item">
+	                  <a href="{{ archivo.archivo.url }}"
+	                     target="_blank">
+	                    {{ archivo.nombre }}
+	                  </a>
+	                </li>
+	              {% endif %}
+	            {% endfor %}
+	          </ul>
+	          <ul class="list-group">
+	            {% for link in links %}
+	              {% if link.categoria == categoria %}
+	                <li class="list-group-item">
+	                  <a href="{{ link.link}}"
+	                     target="_blank">
+	                    {{ link.titulo }}
+	                  </a>
+	                </li>
+	              {% endif %}
+	            {% endfor %}
+	          </ul>
+	        </div>
 	      </div>
-	    </div>
+	    {% endfor %}
     {% endif %}
+
     {% if request.user.permiso.intern %}
-      <div class="section_container">
-	      <div class="well emma-purple-well">
-	        <legend>Generar un Lead</legend>
-	        <ul class="list-group">
-		        <li class="list-group-item">
-		          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdxmEcX_BvF-hTRnS2V1jJ1cqQSzimwTGfQXnHYgGMWDVwZNA/viewform"
-		             target="_blank">
-		            Activa un lead
-		          </a>
-		        </li>
-	        </ul>
+      {% for categoria in categorias_intern %}
+	      <div class="section_container">
+	        <div class="well emma-purple-well">
+	          <legend>{{ categoria.categoria }}</legend>
+	          <ul class="list-group">
+	            {% for archivo in archivos %}
+	              {% if archivo.categoria == categoria %}
+	                <li class="list-group-item">
+	                  <a href="{{ archivo.archivo.url }}"
+	                     target="_blank">
+	                    {{ archivo.nombre }}
+	                  </a>
+	                </li>
+	              {% endif %}
+	            {% endfor %}
+	          </ul>
+	          <ul class="list-group">
+	            {% for link in links %}
+	              {% if link.categoria == categoria %}
+	                <li class="list-group-item">
+	                  <a href="{{ link.link}}"
+	                     target="_blank">
+	                    {{ link.titulo }}
+	                  </a>
+	                </li>
+	              {% endif %}
+	            {% endfor %}
+	          </ul>
+	        </div>
 	      </div>
-	    </div>
+	    {% endfor %}
     {% endif %}
-    {% for categoria in categorias %}
-      <div class="section_container">
-        <div class="well emma-well">
-          <legend>{{ categoria.categoria }}</legend>
-          <ul class="list-group">
-            {% for archivo in archivos %}
-              {% if archivo.categoria == categoria %}
-                <li class="list-group-item">
-                  <a href="{{ archivo.archivo.url }}"
-                     target="_blank">
-                    {{ archivo.nombre }}
-                  </a>
-                </li>
-              {% endif %}
-            {% endfor %}
-          </ul>
-        </div>
-      </div>
-    {% endfor %}
+
+    {% if request.user.permiso.emma %}
+      {% for categoria in categorias_emma %}
+	      <div class="section_container">
+	        <div class="well emma-well">
+	          <legend>{{ categoria.categoria }}</legend>
+	          <ul class="list-group">
+	            {% for archivo in archivos %}
+	              {% if archivo.categoria == categoria %}
+	                <li class="list-group-item">
+	                  <a href="{{ archivo.archivo.url }}"
+	                     target="_blank">
+	                    {{ archivo.nombre }}
+	                  </a>
+	                </li>
+	              {% endif %}
+	            {% endfor %}
+	          </ul>
+	          <ul class="list-group">
+	            {% for link in links %}
+	              {% if link.categoria == categoria %}
+	                <li class="list-group-item">
+	                  <a href="{{ link.link}}"
+	                     target="_blank">
+	                    {{ link.titulo }}
+	                  </a>
+	                </li>
+	              {% endif %}
+	            {% endfor %}
+	          </ul>
+	        </div>
+	      </div>
+	    {% endfor %}
+    {% endif %}
+
   </div>
 
 {% endblock %}
