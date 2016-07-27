@@ -10,7 +10,15 @@ class Categoria(models.Model):
         null= True,
         max_length=30
     )
-
+    embajador = models.BooleanField(
+        default=False,
+    )
+    intern = models.BooleanField(
+        default=False,
+    )
+    emma = models.BooleanField(
+        default=True,
+    )
     class Meta:
         verbose_name = 'Categroia'
         verbose_name_plural = 'Categorias'
