@@ -8,7 +8,7 @@ class Categoria(models.Model):
     categoria = models.CharField(
         blank=True,
         null= True,
-        max_length=30
+        max_length=100
     )
     embajador = models.BooleanField(
         default=False,
