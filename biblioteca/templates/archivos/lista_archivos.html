@@ -7,108 +7,139 @@
   </div>
 
   <div class="files_container">
-    {% if request.user.permiso.embajador %}
-      {% for categoria in categorias_embajador %}
-	      <div class="section_container">
-	        <div class="well emma-purple-well">
-	          <legend>{{ categoria.categoria }}</legend>
-	          <ul class="list-group">
-	            {% for archivo in archivos %}
-	              {% if archivo.categoria == categoria %}
-	                <li class="list-group-item">
-	                  <a href="{{ archivo.archivo.url }}"
-	                     target="_blank">
-	                    {{ archivo.nombre }}
-	                  </a>
-	                </li>
-	              {% endif %}
-	            {% endfor %}
-	          </ul>
-	          <ul class="list-group">
-	            {% for link in links %}
-	              {% if link.categoria == categoria %}
-	                <li class="list-group-item">
-	                  <a href="{{ link.link}}"
-	                     target="_blank">
-	                    {{ link.titulo }}
-	                  </a>
-	                </li>
-	              {% endif %}
-	            {% endfor %}
-	          </ul>
-	        </div>
-	      </div>
-	    {% endfor %}
+    {% if request.user.permiso %}
+      {% if request.user.permiso.embajador %}
+	      {% for categoria in categorias_embajador %}
+		      <div class="section_container">
+		        <div class="well emma-purple-well">
+		          <legend>{{ categoria.categoria }}</legend>
+		          <ul class="list-group">
+		            {% for archivo in archivos %}
+		              {% if archivo.categoria == categoria %}
+		                <li class="list-group-item">
+		                  <a href="{{ archivo.archivo.url }}"
+		                     target="_blank">
+		                    {{ archivo.nombre }}
+		                  </a>
+		                </li>
+		              {% endif %}
+		            {% endfor %}
+		          </ul>
+		          <ul class="list-group">
+		            {% for link in links %}
+		              {% if link.categoria == categoria %}
+		                <li class="list-group-item">
+		                  <a href="{{ link.link}}"
+		                     target="_blank">
+		                    {{ link.titulo }}
+		                  </a>
+		                </li>
+		              {% endif %}
+		            {% endfor %}
+		          </ul>
+		        </div>
+		      </div>
+		    {% endfor %}
+	    {% endif %}
+      {% if request.user.permiso.intern %}
+	      {% for categoria in categorias_intern %}
+		      <div class="section_container">
+		        <div class="well emma-purple-well">
+		          <legend>{{ categoria.categoria }}</legend>
+		          <ul class="list-group">
+		            {% for archivo in archivos %}
+		              {% if archivo.categoria == categoria %}
+		                <li class="list-group-item">
+		                  <a href="{{ archivo.archivo.url }}"
+		                     target="_blank">
+		                    {{ archivo.nombre }}
+		                  </a>
+		                </li>
+		              {% endif %}
+		            {% endfor %}
+		          </ul>
+		          <ul class="list-group">
+		            {% for link in links %}
+		              {% if link.categoria == categoria %}
+		                <li class="list-group-item">
+		                  <a href="{{ link.link}}"
+		                     target="_blank">
+		                    {{ link.titulo }}
+		                  </a>
+		                </li>
+		              {% endif %}
+		            {% endfor %}
+		          </ul>
+		        </div>
+		      </div>
+		    {% endfor %}
+	    {% endif %}
+      {% if request.user.permiso.emma %}
+	      {% for categoria in categorias_emma %}
+		      <div class="section_container">
+		        <div class="well emma-well">
+		          <legend>{{ categoria.categoria }}</legend>
+		          <ul class="list-group">
+		            {% for archivo in archivos %}
+		              {% if archivo.categoria == categoria %}
+		                <li class="list-group-item">
+		                  <a href="{{ archivo.archivo.url }}"
+		                     target="_blank">
+		                    {{ archivo.nombre }}
+		                  </a>
+		                </li>
+		              {% endif %}
+		            {% endfor %}
+		          </ul>
+		          <ul class="list-group">
+		            {% for link in links %}
+		              {% if link.categoria == categoria %}
+		                <li class="list-group-item">
+		                  <a href="{{ link.link}}"
+		                     target="_blank">
+		                    {{ link.titulo }}
+		                  </a>
+		                </li>
+		              {% endif %}
+		            {% endfor %}
+		          </ul>
+		        </div>
+		      </div>
+		    {% endfor %}
+	    {% endif %}
+    {% else %}
+	    {% for categoria in categorias_emma %}
+		      <div class="section_container">
+		        <div class="well emma-well">
+		          <legend>{{ categoria.categoria }}</legend>
+		          <ul class="list-group">
+		            {% for archivo in archivos %}
+		              {% if archivo.categoria == categoria %}
+		                <li class="list-group-item">
+		                  <a href="{{ archivo.archivo.url }}"
+		                     target="_blank">
+		                    {{ archivo.nombre }}
+		                  </a>
+		                </li>
+		              {% endif %}
+		            {% endfor %}
+		          </ul>
+		          <ul class="list-group">
+		            {% for link in links %}
+		              {% if link.categoria == categoria %}
+		                <li class="list-group-item">
+		                  <a href="{{ link.link}}"
+		                     target="_blank">
+		                    {{ link.titulo }}
+		                  </a>
+		                </li>
+		              {% endif %}
+		            {% endfor %}
+		          </ul>
+		        </div>
+		      </div>
+		    {% endfor %}
     {% endif %}
-
-    {% if request.user.permiso.intern %}
-      {% for categoria in categorias_intern %}
-	      <div class="section_container">
-	        <div class="well emma-purple-well">
-	          <legend>{{ categoria.categoria }}</legend>
-	          <ul class="list-group">
-	            {% for archivo in archivos %}
-	              {% if archivo.categoria == categoria %}
-	                <li class="list-group-item">
-	                  <a href="{{ archivo.archivo.url }}"
-	                     target="_blank">
-	                    {{ archivo.nombre }}
-	                  </a>
-	                </li>
-	              {% endif %}
-	            {% endfor %}
-	          </ul>
-	          <ul class="list-group">
-	            {% for link in links %}
-	              {% if link.categoria == categoria %}
-	                <li class="list-group-item">
-	                  <a href="{{ link.link}}"
-	                     target="_blank">
-	                    {{ link.titulo }}
-	                  </a>
-	                </li>
-	              {% endif %}
-	            {% endfor %}
-	          </ul>
-	        </div>
-	      </div>
-	    {% endfor %}
-    {% endif %}
-
-    {% if request.user.permiso.emma %}
-      {% for categoria in categorias_emma %}
-	      <div class="section_container">
-	        <div class="well emma-well">
-	          <legend>{{ categoria.categoria }}</legend>
-	          <ul class="list-group">
-	            {% for archivo in archivos %}
-	              {% if archivo.categoria == categoria %}
-	                <li class="list-group-item">
-	                  <a href="{{ archivo.archivo.url }}"
-	                     target="_blank">
-	                    {{ archivo.nombre }}
-	                  </a>
-	                </li>
-	              {% endif %}
-	            {% endfor %}
-	          </ul>
-	          <ul class="list-group">
-	            {% for link in links %}
-	              {% if link.categoria == categoria %}
-	                <li class="list-group-item">
-	                  <a href="{{ link.link}}"
-	                     target="_blank">
-	                    {{ link.titulo }}
-	                  </a>
-	                </li>
-	              {% endif %}
-	            {% endfor %}
-	          </ul>
-	        </div>
-	      </div>
-	    {% endfor %}
-    {% endif %}
-
   </div>
 
 {% endblock %}
