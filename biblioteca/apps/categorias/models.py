@@ -20,7 +20,7 @@ class Categoria(models.Model):
         default=True,
     )
     class Meta:
-        verbose_name = 'Categroia'
+        verbose_name = 'Categoria'
         verbose_name_plural = 'Categorias'
 
     def __unicode__(self):

@@ -20,7 +20,7 @@ class Migration(migrations.Migration):
                 ('categoria', models.CharField(blank=True, max_length=30, null=True)),
             ],
             options={
-                'verbose_name': 'Categroia',
+                'verbose_name': 'Categoria',
                 'verbose_name_plural': 'Categorias',
             },
         ),
